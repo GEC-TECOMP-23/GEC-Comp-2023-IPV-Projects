@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %} Image Coloring {% endblock %}
+{% block content %}
+<!-- NOT DONE -->
+<section class="w-4/5 mx-auto mt-8">
+    <h1 class="font-bold text-4xl tracking-wider text-center uppercase">Image Coloring</h1>
+    <article class="mt-8 md:mt-16">
+        <h3 class="font-bold text-xl">Convert your RGB images into grayscale and binary images and your grayscale images into colored images</h3>
+        <p class="text-sm">Grayscale Conversion: Converting RGB images to grayscale involves transforming the original image into a single-channel representation where each pixel's intensity value represents the overall brightness or gray level. This conversion removes color information while retaining the structural details of the image. Grayscale images are widely used in various applications, such as image analysis, computer vision, and medical imaging.
+            <br>
+<br>
+            Binary Conversion: Binary images are a type of black-and-white image where each pixel is represented by either black or white, typically based on a specified threshold value. Converting grayscale or RGB images into binary images involves thresholding the intensity values, where pixels below the threshold are set to black (0) and pixels above the threshold are set to white (1). Binary images are useful for tasks like object segmentation, shape detection, and feature extraction.
+            <br><br>
+            Colored Grayscale Images: Converting grayscale images into colored images involves mapping the grayscale values to specific color channels. By assigning different colors to different intensity levels, we can create visually appealing representations of the grayscale image. This technique can be used for artistic effects, visual enhancement, or conveying additional information by encoding grayscale values with specific colors.</p>
+    </article>
+    <form method="post" class="mt-8" enctype="multipart/form-data">
+        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload file</label>
+        <input
+            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+            aria-describedby="file_input_help" id="file_input" type="file" name="file">
+        <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX.
+            800x400px).</p>
+        <div class="mt-3">
+            <label for="dropdown" class="">Select an Operation</label><br/>
+            <select name="operation" class="py-2 text-sm text-gray-700 dark:text-gray-200 border rounded-xl" id="dropdown" aria-label="dropdown">
+                <option class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-center" selected>Choose a option</option>
+                <option class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-center" value="binary">Binary</option>
+                <option class="lock px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-center" value="gray">Grayscale</option>
+                <option class="lock px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-center" value="color">Colorize</option>
+            </select>
+        </div>
+        <div class="flex justify-center">
+            <button type="submit"
+                class="w-fit px-4 py-2 border border-orange-500 hover:bg-orange-500 hover:text-white uppercase mt-4 tracking-wider hover:scale-110 rounded-lg">Upload</button>
+        </div>
+    </form>
+</section>
+{% endblock %}
