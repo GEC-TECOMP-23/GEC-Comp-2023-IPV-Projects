@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block main %}
+    {% if img_obj.hotel_Main_Img.url %}  
+        <h3>Original Image</h3>  
+        <!-- <img src="media/images/image_processing_test_case_2.jpeg" width="200" height="200" alt="IMAGE NOT SEEN" > -->
+        <img src="media/{{img_obj.hotel_Main_Img}}" width="200" height="200" alt="IMAGE NOT SEEN" >
+        <br><br><br>
+        <!-- <h4>Image Transformations</h4> -->
+        <!-- <button type="button" class="btn btn-primary">Primary</button> -->
+        
+        <a href="/">Home</a>
+    {% endif %}  
+{% endblock %}
